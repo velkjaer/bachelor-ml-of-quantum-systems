@@ -21,7 +21,7 @@ jobs:
       - name: compileLatexDocuments
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: main.tex
+          root_file: Ourthesis.tex
       - name: Generate pdf
         run: |
           mkdir public

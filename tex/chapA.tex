@@ -1,0 +1,59 @@
+\newpage
+\chapter{Highlighted derivations}\label{chap:derivations}
+\thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Weights Linear Model                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\seclab{Derivation of the optimal weights for the non-penalized linear model}{sec:dev_lin_model}
+To model according to the supervised learning method outlined in \eqref{supervised_modelling}, the unknown noise parameter $\varepsilon$ has to be estimated. Since $\varepsilon$ is unknown, one can try to estimate is with probability theory. However, this requires some assumptions about $\varepsilon$. Firstly, $\varepsilon$ is assumed to be a random/independent error  with a normally distributed probability density with mean 0 and variance $\sigma^2$, i.e., $p(\varepsilon) \sim \mathcal{N}\qty(0,\sigma^2)$. Following this assumption, the probability distribution of $y$ will be normally distributed around $f\qty(\xxx,\bsw)$
+\begin{align}
+    p\qty(y|\xxx,\bsw,\sigma) &\sim \mathcal{N}\qty(y|f\qty(\xxx,\bsw),\sigma^2)
+\end{align}
+But this is only for a single observation; Given the entire data set $\calD$ with observations $\XXX$ and ouput $\yyy$, the likelihood of $\calD$ is given as:
+\begin{align}
+    p\qty(\yyy|\XXX,\bsw) &\sim \prod_{i=1}^{N} \mathcal{N}\qty(y_i|f\qty(\xxx_i,\bsw),\sigma^2)
+\end{align}
+
+The posterior probability distribution for the weights, $\bsw$ given the data set $\calD$ can then be found through Bayes' Theorem,
+
+\begin{align}\label{eq:bayes_linear_model}
+    p\qty(\bsw|\XXX,\yyy) &\sim \dfrac{p\qty(\yyy|\XXX,\bsw) p\qty(\bsw)}{p\qty(\XXX,\yyy)}
+\end{align}
+From \eqref{bayes_linear_model}, it is seen that further progress in finding the optimal weights cannot be made without further assumptions. $p\qty(\yyy|\XXX)$ is a constant term and thus we also have to make assumptions about $p\qty(\bsw|\XXX,\yyy)$ and $p(\bsw)$. Regarding $p\qty(\bsw|\XXX,\yyy)$ it is for simplifying reasons assumed that we are only interested in the most probable posterior distribution for the weights,i.e. $\bsw^* = \argmax_{\bsw} p\qty(\bsw|\XXX,\yyy)$. Furthermore the prior distribution $p\qty(\bsw)$ is assumes to be the improper prior,i.e. $p\qty(\bsw)=1$. This prior is referred to as the improper prior due to the fact that it diverges when integrated over all weights. Thus this density does not make sense formally, but the interpretation of it is that all possibilities of $p\qty(\bsw)$ is weighted equally.
+
+Now one can get somewhere with this optimization problem and the most probable weight vector $\bsw^*$ can be found: 
+\begin{equation*}
+    \begin{split}
+    \bsw^* = \argmax_{\bsw} \curlyb{p(\bsw|\XXX,\yyy)} &=  \argmax_{\bsw} \curlyb{ \dfrac{p\qty(\yyy|\XXX,\bsw) p\qty(\bsw)}{p\qty(\XXX,\yyy)} } = \argmax_{\bsw} \curlyb{\log \qty[p\qty(\yyy|\XXX,\bsw)]} \\
+    \mathrm{with:} \log \qty[p\qty(\yyy|\XXX,\bsw)] &=  \log \qty[\prod_{i=1}^{N} \dfrac{1}{\sqrt{2 \pi \sigma^2}} \exp(-\dfrac{\qty(y_i-f_{\mathcal{M}}\qty(\xxx_i,\bsw))^2}{2 \sigma^2})]  \\
+    &= \dfrac{-1}{\sqrt{2\pi\sigma^2}} \sum_{i=1}^{N} \norm{f\qty(\xxx_i,\bsw)-y_i}^2 - \dfrac{N}{2} \log(2\pi\sigma^2)
+    \end{split}
+\end{equation*}
+Where the last term is constant and thus, the optimization problem can be restated as minimizing the sum-of-squares error
+\begin{equation}
+    \begin{split}
+        \bsw^* = \argmax_{\bsw} \curlyb{p\qty(\bsw|\XXX,\yyy)}&= \argmax_{\bsw} \curlyb{\log \qty[ p\qty(\yyy|\XXX,\bsw)]}\\
+        &=\argmin_{\bsw} \curlyb{ \dfrac{1}{2} \sum_{i=1}^{N} \qty(f\qty(\xxx_i,\bsw) - y_i)^2 } 
+    \end{split}
+\end{equation}
+This result is the reason why the loss function used is for regression is the sum-of-squares and this will be used as a loss function when selecting the best model by cross-validation in \chapref{ml_in_physics}.
+
+Further analysis can be done by utilizing that the minimum of the error function can be found by taking the derivative with respect to the weight vector $ \bsw$, setting the gradient equal to zero and solving for $\bsw$. This is done in \citep{allhailkingMorten}, where inspiration to this derivation was found as well, and the result is
+\begin{equation}
+    \bsw^* = \qty( \XXXtilde^{\top} \XXXtilde )^{-1} \XXXtilde^{\top} \yyy
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            Bayes' Theorem              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Bayes' Theorem}
+Using the product rule twice one can derive Bayes' theorem. The product rule goes as: \\
+\begin{align}
+        P\qty(A,B) &= P\qty(A|B) P\qty(B) \\
+        P\qty(A,B) &= P\qty(B|A) P\qty(A)
+\end{align}
+Thus one can put the two right hand sides equal to each other to obtain Bayes' Theorem:
+\begin{align}
+      P\qty(A|B) P(B) &=  P\qty(B|A) P(A) \\
+      P\qty(A|B)      &= \dfrac{P\qty(B|A) P(A)}{P(B)}
+\end{align}

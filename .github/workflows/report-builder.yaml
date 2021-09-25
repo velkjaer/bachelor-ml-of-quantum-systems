@@ -1,0 +1,57 @@
+# Script for building pdfs and publishing them to GitHub Pages.
+# Reference(s):
+# -   https://github.com/marketplace/actions/github-action-for-latex
+# -   https://github.com/marketplace/actions/github-pages
+name: report-builder
+
+on:
+  push:
+    branches: [ main ]
+
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: pullLatexArtifacts
+        uses: actions/checkout@v2
+      - name: compileLatexDocuments
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+      - name: Generate pdf
+        run: |
+          mkdir public
+          REPO=$(echo $GITHUB_REPOSITORY | awk -F/ '{print $NF}')
+          mv main.pdf public/main.pdf
+          cat > public/index.html <<EOL
+          <!doctype html>
+            <html>
+              <head>
+                <title>Compilation ${{github.run_number}}</title>
+              </head>
+              <body>
+                <p>
+                  <a href="https://velkjaer.github.io/${REPO}/main.pdf">
+                    Compilation ${{ github.run_number }}
+                  </a>
+                </p>
+                <p>
+                  <a href="https://github.com/${GITHUB_REPOSITORY}/blob/gh-pages/main.pdf">
+                     Direct link to GitHub blob of newest report in pdf.
+                  </a>
+                </p>
+              </body>
+            </html>
+          EOL
+      - name: deployToGithubPages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: public
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

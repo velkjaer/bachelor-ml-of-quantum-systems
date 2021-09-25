@@ -1,0 +1,125 @@
+
+
+ 
+%\end{center}
+\frontmatter
+\pagestyle{frontmatter}\pagenumbering{roman}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            ABSTRACT                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{Abstract}
+\markboth{ABSTRACT}{ABSTRACT}
+Machine learning (ML) came with the thoughts of Alan Turing back in 1950 in his famous article \textit{"Computing Machinery and Intelligence"}\citep{Turing1950-TURCMA} where Turing proposed the idea of creating machines able to \emph{"learn from experience"}. Today, techniques of ML are being applied in almost every field of science, from the oil industry \citep{Sui2011748} to cancer prognosis \citep{Kourou20158}. This thesis introduces several essential concepts of machine learning in order to  study how ML algorithms can be used for crystal structure predictions (CSP) using data from quantum mechanical simulations, i.e. density functional theory (DFT). 
+In this thesis, three different linear regression models with least absolute shrinkage and selection operator (Lasso) regularization, are presented. For each of the three types of models, ten different regularization strengths are tested, and the optimal model is chosen by cross-validation (CV). The three models serve a common goal of finding an universal feature vector being able to predict the difference in heat of formation between a reference structure, rock salt (Rs), and three other crystal structures, i.e., nickel arsenide (NiAs), zinc blende (Zb) and wurtzite (Wz). An approach, quite similar to that of \citep{criticalrole_descriptor}, but with a more complex data set containing AB dimers violating the octet-rule. We found that, due to the increased complexity of the data set compared to the studies of Ghiringhelli and Scheffler, the amount of features required to get similar prediction accuracy increased notably. The best predictive model of this project used 46 features to predict the difference in heat of formation between NiAs and Rs. The model obtained a RMSE of 110 meV, a generalization error of 15 meV (estimated with CV) and an average absolute error of 81 meV. This is fairly large error estimates compared to the target values and thus more complex ML methods could be applied in order to increase performance, while making sure that the interpretability of a given model remains intact.
+\\[20mm]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%             RESUME                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iffalse
+\chapter*{Resum\'e}
+\markboth{RESUME}{RESUME}
+Afhandlingen omhandler machine learning af kvantesystemer. Mere specifikt, forudsigelse af forskellen i formationsenergi af AB-dimere mellem for fire forskellige krystalstrukture.
+
+Ydermere er det blevet forsøgt at finde et universelt sæt af egenskaber, der kan bruges til relativt nøjagtig bestemmelse af formationsenergier. Hvis sådan et sæt kan findes samt det er muligt at forudsige hvilken en af strukturene, der vil være mest stabile i naturen - vil dette kunne bruges til at effektivisere screening af potentielle materialer til eksempelvis solceller.
+\\[20mm]
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%             PREFACE                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{Preface}
+\markboth{PREFACE}{PREFACE}
+This dissertation studies \emph{"Machine Learning of Quantum Systems"} or more specifically, crystal structure predictions using tools from the field of machine learning (ML). The purpose of the thesis is to fulfill the authors' graduation requirements and obtain an undergraduate degree in Physics \& Nanotechnology from the Technical University of Denmark (DTU). The learning objectives of the project were formulated together with our supervisor, Karsten Wedel Jacobsen in February 2017 and since we have been engaged in the project until June 2017. The authors' knowledge of ML was very limited at the start of the project and hence we would like to thank Karsten for his guidance, support and patience as it is truly appreciated. Furthermore, we would like to thank Morten Mørup for teaching a great introductory course in machine learning, which helped us a lot. Mikkel N. Schmidt and Peter B. Jørgensen deserve gratitude as well for guidance and the same goes for Korina Kuhar who helped us in the clarification phase of the project. Mohnish Pandey provided us with the data set and deserves thanks as well. \\[5mm]
+We thank you for your time and hope you will enjoy your reading.
+
+\begin{center}
+\emph{Signature:}\underline{\qquad \qquad \qquad \qquad \qquad} \hspace{1.5cm} \emph{Signature:} \underline{\qquad \qquad \qquad \qquad \qquad}\\[2mm]
+Markus Greve Bech \& Victor Elkjær Birk\\
+Department of Physics\\
+Technical University of Denmark\\
+6 June 2017
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   LIST OF FIGURES, TABLES AND SYMBOLS  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Here comes the table of contents
+\tableofcontents
+% Here comes list of figures, tables, and symbols
+
+
+\listoffigures
+\addcontentsline{toc}{chapter}{List of figures}
+
+\listoftables
+\addcontentsline{toc}{chapter}{List of tables}
+
+\chapter*{List of symbols}
+\markboth{LIST OF SYMBOLS}{LIST OF SYMBOLS}
+\addcontentsline{toc}{chapter}{List of symbols}
+\begin{center}
+\begin{tabular}{p{2cm}p{12cm}}
+\textbf{Symbol}    & \textbf{Description}   \\
+\hline\hline
+$\xxx_i$ & Input vector/feature vector, $[\begin{array}{cccc}
+    x_1 & x_2 & ... & x_M
+\end{array}]$ where $x_j$ is the value of the $j$'th attribute in observation $\xxx_i$\\
+$y_i$ & Output/target value corresponding to $\xxx_i$ \\
+$\left\{\xxx_i,y_i\right\}$ & Data pair with feature vector $\xxx_i$  target $y_i$\\
+$\mathcal{D}$                       & Data set; $\left\{\xxx_i,y_i\right\}_{i=1}^{N}=\curlyb{\XXX,\yyy}$  \\
+$\boldsymbol{X}$ & Data matrix; $N \times M$ matrix \\
+$\XXXtilde$ & Standardized Feature vector; either with respect to the mean of each attribute or the mean and standard deviation  \\
+$X_{i,j}$ & The element of $\XXX$ in row $i$ and column $j$ \\
+$\yyy$ & Output vector, N-dimensional vector  \\
+$\mathcal{M}$                       & A model $\mathcal{M}$        \\
+$\mathcal{M}^*$                     & Optimal model \\
+$f_{\mathcal{M}}\qty(\xxx,\bsw)$    & Predictive function \\
+$\hat{y}$                           & Predicted values of a model $\mathcal{M}$ via. $f_{\mathcal{M}}\qty(\xxx,\bsw)$ \\
+$p\qty(A)$                          & Probability of event A happening                         \\
+$p\qty(A | B )$                     & Conditional probability, i.e., probability of $A$ given $B$           \\
+$p\qty(A,B)$                        & Probability of A and B             \\
+$\mathcal{N}\qty(x | \mu , \sigma^2)$           & Gaussian Distribution with mean $\mu$ and variance $\sigma^2$  \\
+$d\qty(\vec{a},\vec{b})$ & Dissimilarity measure between $\vec{a}$ and $\vec{b}$; Could be a \Lnorm{p} \\
+$E\qty(\bsw)$ & The error as a function of the weights \\
+$\boldsymbol{w}$                    & Weights vector                   \\
+$\boldsymbol{w^*}$                  & Optimal Weights; $\argmin_{\bsw} \left\{ C\qty(\bsw) \right\}$ \\
+$\EM{train}$ & Training Error of model $\mathcal{M}$ \\
+$\EM{test}$ & Test Error of model $\mathcal{M}$ \\
+$\EM{gen}$ & Generalization Error of model $\mathcal{M}$ \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+
+\newpage
+
+\begin{center}
+\begin{tabular}{p{3.2cm}p{2.3cm}p{1.2cm}p{6cm}}
+\texttt{Python Variable} &  Type & Size & Description   \\
+\hline\hline
+\texttt{X} & \texttt{Numeric} & $N\times M$ & Data matrix \\
+\texttt{X\_test\_box} & \texttt{Numeric} & $N_{\text{test}}\times M$ & Data matrix for the test box. \\
+\texttt{X\_opt\_test\_box} & \texttt{Numeric} & $N_{\text{test}}\times M_{\text{opt}}$ & Data matrix for the test box with optimized features. \\
+
+\texttt{attributeNames} & \texttt{Cell Array} &$M\times 1$ & List of attribute names \\
+\texttt{names\_opt} & \texttt{Cell Array} &$M_{\text{opt}}\times 1$ & List of attribute names for optimized features. \\
+\texttt{K1} & \texttt{int} & [5,100] & Number of folds in the outer cross validation loop \\
+\texttt{K2} & \texttt{int} & [3,20] & Number of folds in the inner cross validation loop \\
+\texttt{max\_iter} & \texttt{int} & $10^{4}$ & Maximum number of iterations until a model is fitted \\
+\texttt{lassoCV} & \texttt{Linear model} & N/A & The model used to predict.  \\
+\texttt{alpha} & \texttt{float} & $\approx 10^{-4}$ to $10^{0}$ & Regulization parameter for the Lasso model. Usually referred to as $\gamma$. \\
+\texttt{weights} & \texttt{Numeric} & $M\times 1$ & Weights corresponding to the resulting weights from the Lasso regression. \\
+\texttt{weights\_opt} & \texttt{Numeric} & $M_{\text{opt}}\times 1$ & Weights corresponding to the non-zero resulting weights from the Lasso regression. \\
+
+
+\midrule
+\texttt{y} & Scalar & $N\times [1,3]$ & True target values \\
+\texttt{y\_test\_box} & Numeric & $N_{\text{test}}\times [1,3]$ & True target values of secret test box observation\\
+\texttt{y\_hat\_opt} & Numeric & $N$ & Predicted values of the optimized model\\ 
+\texttt{y\_hat\_opt\_test\_box} & Numeric & $N$ &  Predicted values of the optimized model on the test box data\\ 
+\hline
+\hline
+\end{tabular}
+\end{center}

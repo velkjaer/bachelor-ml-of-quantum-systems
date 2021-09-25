@@ -1,0 +1,22 @@
+\newpage
+\chapter{Types of attributes}\label{chap:attribute_types}
+\thispagestyle{empty}
+
+In 1964, Stevens created a terminology for attributes \citep{Stevens677}. Although they're not universally accepted, they will be used to describe the initial 17 atomic features for each of the A and B atoms in the data-set. Thus, this \appref{attribute_types} will give a brief explanation for the unfamiliar reader.\index{Types of Attributes}
+
+The attribute types introduced by Stevens can be boiled down to four main types; \emph{Nominal}-, \emph{Ordinal}-, \emph{Interval}- and \emph{Ratio} attributes. They're sorted in an hierarchical order, i.e., if an attribute is interval it also possesses the properties of an Ordinal attribute with respect to the mathematical operations one can compare these types of attributes with. \tabref{attribute_types} shows the four types of attributes and the mathematical operations associated with them, using wine as an example.
+
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{c p{5cm} p{6cm}}
+        \toprule
+        \textbf{Type} & \textbf{Mathematical Operations} & \textbf{Example}\\ \toprule
+        Nominal & None & Origin of a wine (Country) \\ 
+        Ordinal & Nominal+ $\left\{ \leq, \geq \right\}$ & Level of Dryness  \\ 
+        Interval & Ordinal + $\left\{ +,-\right\}$ & Year of production \\
+        Ratio & Interval + $\left\{ \times,\text{\textdiv} \right\}$ & Alcohol \% \\ \bottomrule
+    \end{tabular}
+    \caption[Types of attributes]{Overview of different types of attributes. Here attributes of wine are used as an example.}
+    \label{tab:attribute_types}
+\end{table}
+

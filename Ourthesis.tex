@@ -1,0 +1,99 @@
+\documentclass[a4paper,11pt]{book}
+\usepackage[a4paper]{geometry}
+\let\tmp\oddsidemargin
+\let\oddsidemargin\evensidemargin
+\let\evensidemargin\tmp
+\reversemarginpar
+\input{tex/packages.tex}
+
+\usepackage[square,authoryear, sort&compress]{natbib}
+\bibliographystyle{plainnat}
+%    round: (default) for round parentheses;
+%    square: for square brackets;
+%    curly: for curly braces;
+%    angle: for angle brackets;
+%    colon: (default) to separate multiple citations with colons;
+%    comma: to use commas as separaters;
+%    authoryear: (default) for author-year citations;
+%    numbers: for numerical citations;
+%    super: for superscripted numerical citations, as in Nature;
+%    sort: orders multiple citations into the sequence in which they appear in the list of references;
+%    sort&compress: as sort but in addition multiple numerical citations are compressed if possible (as 3-6, 15);
+%    longnamesfirst: makes the first citation of any reference the equivalent of the starred variant (full author list) and subsequent citations normal (abbreviated list);
+%    sectionbib: redefines \thebibliography to issue \section* instead of \chapter*; valid only for classes with a \chapter command; to be used with the chapterbib package;
+%    nonamebreak: keeps all the authors' names in a citation on one line; causes overfull hboxes but helps with some hyperref problems.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            Page style                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\topmargin       5 mm
+%\oddsidemargin    2 mm
+%\evensidemargin   2 mm
+%\textwidth      150 mm
+%\textheight     210 mm
+
+
+
+\numberwithin{figure}{chapter}
+
+% Disse to linjer sikrer, at der bliver mellemrum i stedet for indrykning ved afsnit
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+%Nu laver vi lige en header
+
+\fancypagestyle{frontmatter}{%
+\fancyhf{} %Clear header and footer
+\fancyhead[LE]{\thepage \quad \textit{\leftmark}}
+\fancyhead[RO]{\textit{\rightmark} \quad \thepage}
+}%
+
+\fancypagestyle{mainmatter}{%
+\fancyhf{} %Clear header and footer
+\fancyhead[LE]{\thepage \quad \textit{\leftmark}}
+\fancyhead[RO]{\textit{\rightmark} \quad \thepage}
+}%
+\lstset{%
+backgroundcolor=\color{white},
+breaklines=true, 
+keepspaces=true,  % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+ keywordstyle=\color{purple},
+commentstyle=\color{blue},
+language=Python,
+stringstyle=\color{red},
+}
+
+\renewcommand{\baselinestretch}{1.15}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            main body                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% First include the front, i.e. title, abstracts, lists-of-what-not, etc
+
+\include{tex/frontpage}
+
+\setlength{\voffset}{-0.7 in}
+
+\newif\iffigure
+\figuretrue
+\include{tex/chap00}
+% Then include all the regular chapters
+\include{tex/chap01}
+\include{tex/chap02}
+\include{tex/chap03}
+\include{tex/chap04}
+% After that the appendices
+
+\appendix
+
+\include{tex/chapA}
+\include{tex/chapB}
+\include{tex/chapC}
+
+\bibliography{bib/CAMD.bib}
+\bibliographystyle{unsrt}
+\printindex
+
+\end{document}

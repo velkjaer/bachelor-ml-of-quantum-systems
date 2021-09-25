@@ -1,0 +1,37 @@
+    \begin{tikzpicture}[scale=0.9]
+        %Nederste panel
+        \draw[fill=softblue] (0,0) rectangle (3,1);
+        \draw[line width = 0.5cm,-{Triangle Cap[fill=softgrey]},softgrey] (3.5,0.5) to (7.5,0.5);
+        \draw[fill=softblue] (8,0) rectangle (11,1);
+        \node[] at (1.5,0.5) {System};
+        \node[] at (9.5,0.5) {Property};
+        \node[] at (5.5,1) {Machine Learning};
+        %Øverste panel
+        \draw[fill=softblue] (0,8) rectangle (3,9);
+        \draw[line width = 0.5cm,-{Triangle Cap[fill=softgrey]},softgrey] (3.5,8.5) to (7.5,8.5);
+        \draw[fill=softblue] (8,8) rectangle (11,9);
+        \node[] at (1.5,8.5) {System};
+        \node[] at (9.5,8.5) {Property};
+        \node[] at (5.5,9) {Quantum theory};
+        \node[] at (5.5,8) {$H\psi =E\psi $};
+        %Pilene i midten
+        \draw[thin,->] (5.5,7)--(1.25,6.5);
+        \draw[line width = 0.5cm,-{Triangle Cap[fill=softgrey]},softgrey] (5.75,2) arc (-85:85:2.5);
+        \draw[line width = 0.5cm,-{Triangle Cap[fill=softgrey]},softgrey] (5.25,7) arc (95:265:2.5);
+        \node[anchor=east] at (2.5,4.75) {Large-scale};
+        \node[anchor=east] at (2.5,4.25) {exploration};
+        \node[anchor=west] at (8.5,4.75) {Prediction};
+        \node[anchor=west] at (8.5,4.25) {validation};
+        %
+        \draw[fill=softblue, draw= softblue] (-1.25,2) rectangle (1.25,3);
+        \draw[fill=softblue, draw= softblue] (-1.25,6) rectangle (1.25,7);
+        \draw[thin,<-] (1.5,1)--(1.25,2);
+        \draw[thin,->] (2.5,4)--(1.25,3);
+        \draw[thin,->] (1,7)--(1.5,8);
+        
+        \node[] at (0,2.75) {Feature};
+        \node[] at (0,2.25) {vectors};
+        \node[] at (0,6.5) {Selection};
+        %\node[] at (-2.25,7.25) {knowledge};
+        
+    \end{tikzpicture}

@@ -1,0 +1,129 @@
+\indexentry{lab-on-a-chip systems!basic concepts}{1}
+\indexentry{silicon chips}{1}
+\indexentry{polymer chips}{1}
+\indexentry{microfluidics!definition of}{1}
+\indexentry{LOC, lab-on-a-chip}{1}
+\indexentry{MEMS, microelectromechanical}{1}
+\indexentry{microelectromechanical, MEMS}{1}
+\indexentry{microfluidics!importance of surface effects}{2}
+\indexentry{fluids and fields, basic concepts}{2}
+\indexentry{fields and fluids, basic concepts}{2}
+\indexentry{solids, basic concepts}{2}
+\indexentry{gas!basic concept}{2}
+\indexentry{liquid!basic concept}{2}
+\indexentry{fluids: liquids and gases}{2}
+\indexentry{gas!density, typical value}{2}
+\indexentry{water!density at 20$^\circ$C}{2}
+\indexentry{density of water at 20$^\circ$C}{2}
+\indexentry{inter-molecular forces}{2}
+\indexentry{Lennard--Jones potential}{2}
+\indexentry{thermal fluctuations!molecular disorder in liquids}{3}
+\indexentry{continuum hypothesis}{3}
+\indexentry{fluid particles!definition}{3}
+\indexentry{thermal fluctuations!number of molecules}{4}
+\indexentry{mesoscopic regime}{4}
+\indexentry{mass density}{4}
+\indexentry{energy density}{4}
+\indexentry{force density}{4}
+\indexentry{momentum density}{4}
+\indexentry{velocity field!basic concept}{5}
+\indexentry{pressure field!basic concept}{5}
+\indexentry{density field!basic concept}{5}
+\indexentry{Eulerian description of velocity fields}{5}
+\indexentry{Lagrangian description of velocity fields}{5}
+\indexentry{scalar fields}{5}
+\indexentry{vector field!basic concept}{5}
+\indexentry{tensor field!basic concept}{5}
+\indexentry{SI units}{5}
+\indexentry{NIST}{6}
+\indexentry{units}{6}
+\indexentry{water!viscosity at 20$^\circ$C}{6}
+\indexentry{viscosity of water at 20$^\circ$C}{6}
+\indexentry{notation!numbers with SI units}{6}
+\indexentry{notation}{7}
+\indexentry{index notation}{7}
+\indexentry{vector field!index notation}{7}
+\indexentry{tensor field!index notation}{7}
+\indexentry{Einstein summation convention}{7}
+\indexentry{scalar product of vectors}{7}
+\indexentry{vector scalar product}{7}
+\indexentry{partial derivative, notation}{7}
+\indexentry{derivative, notation}{7}
+\indexentry{time-derivative!partial $\pp_t$}{7}
+\indexentry{time-derivative!total $d^{{}}_t$}{7}
+\indexentry{total time-derivative $d^{{}}_t$}{7}
+\indexentry{nabla operator, definition}{7}
+\indexentry{Laplace operator!Cartesian coordinates}{8}
+\indexentry{Kronecker delta $\delta^{{}}_{ij}$}{8}
+\indexentry{Levi--Civita symbol $\epsilon^{{}}_{ijk}$}{8}
+\indexentry{cross product of vectors}{8}
+\indexentry{vector cross product}{8}
+\indexentry{continuity equation!mass}{8}
+\indexentry{surface unit vector}{9}
+\indexentry{unit vector of a surface}{9}
+\indexentry{compressible fluids}{9}
+\indexentry{Gauss's theorem}{9}
+\indexentry{continuity equation!charge}{10}
+\indexentry{incompressible fluids}{10}
+\indexentry{Navier--Stokes equation!derivation}{10}
+\indexentry{Newton's second law}{10}
+\indexentry{forces on fluid particles}{10}
+\indexentry{fluid particles!forces on}{10}
+\indexentry{material (substantial) time-derivative $D^{{}}_t$}{11}
+\indexentry{substantial (material) time-derivative $D^{{}}_t$}{11}
+\indexentry{time-derivative!material (substantial) $D^{{}}_t$}{11}
+\indexentry{notation!time-derivative}{11}
+\indexentry{body force, definition}{11}
+\indexentry{gravitational body force}{11}
+\indexentry{electrical body force}{11}
+\indexentry{pressure-gradient force}{11}
+\indexentry{Gauss's theorem}{11}
+\indexentry{viscous!force}{12}
+\indexentry{viscous!stress tensor $\sigma^{\prime}_{ik}$}{12}
+\indexentry{frictional force}{12}
+\indexentry{tensor field!viscous stress tensor}{12}
+\indexentry{Navier--Stokes equation!compressible fluids}{12}
+\indexentry{stress tensor $\sigma^{}_{ik}$}{12}
+\indexentry{Navier--Stokes equation!incompressible fluids}{13}
+\indexentry{Navier--Stokes equation!analytical solutions}{15}
+\indexentry{Navier--Stokes equation!no-slip boundary condition}{15}
+\indexentry{no-slip boundary condition}{15}
+\indexentry{fluids in mechanical equilibrium}{15}
+\indexentry{mechanical equilibrium}{15}
+\indexentry{steady-state!definition}{15}
+\indexentry{Navier--Stokes equation!mechanical equilibrium}{16}
+\indexentry{hydrostatic pressure!incompressible liquid}{16}
+\indexentry{hydrostatic pressure!compressible liquid}{16}
+\indexentry{atmosphere, thickness of}{16}
+\indexentry{Navier--Stokes equation!film flow, inclined plane}{16}
+\indexentry{inclined plane!Navier--Stokes equation}{16}
+\indexentry{Navier--Stokes equation!Couette flow}{18}
+\indexentry{parallel plates, Couette flow}{18}
+\indexentry{Navier--Stokes equation!Poiseuille flow}{19}
+\indexentry{Pressure driven flow, Poiseuille flow}{19}
+\indexentry{velocity field!Poiseuille flow}{19}
+\indexentry{arbitrary cross-section, Poiseuille flow}{19}
+\indexentry{Poiseuille flow!arbitrary cross-section}{19}
+\indexentry{flow rate, definition}{21}
+\indexentry{mass flow rate}{21}
+\indexentry{Poiseuille flow!elliptic cross-section}{21}
+\indexentry{polar coordinates}{21}
+\indexentry{Jacobian determinant}{22}
+\indexentry{Poiseuille flow!circular cross-section}{22}
+\indexentry{Laplace operator!cylindrical coordinates}{22}
+\indexentry{inhomogeneous differential equation}{23}
+\indexentry{homogeneous differential equation}{23}
+\indexentry{Poiseuille flow!triangular cross-section}{23}
+\indexentry{lab-on-a-chip systems!microreactor on PMMA chip}{24}
+\indexentry{Poiseuille flow!rectangular cross-section}{24}
+\indexentry{Fourier series for velocity field}{25}
+\indexentry{velocity field!Fourier expansion}{25}
+\indexentry{inhomogeneous differential equation}{25}
+\indexentry{homogeneous differential equation}{25}
+\indexentry{Riemann zeta function}{27}
+\indexentry{Poiseuille flow!infinite parallel-plate cross-section}{27}
+\indexentry{Poiseuille flow!perturbation of circular shape}{28}
+\indexentry{shape perturbation of Poiseuille flow}{28}
+\indexentry{perturbation theory}{28}
+\indexentry{Taylor expansion!shape perturbation}{29}
+\indexentry{Fourier transformation!basic theory}{31}

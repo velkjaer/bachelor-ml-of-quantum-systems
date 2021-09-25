@@ -1,0 +1,109 @@
+
+
+\chapter{Fourier transformations I}
+\seclab{FourierTrans}
+%\setcounter{page}{1}
+\index{Fourier transformation!basic theory}
+
+Fourier transformation is useful to employ in the case of homogeneous
+systems or to change linear differential equations into linear
+algebraic equations. The idea is to resolve the quantity $f(\rrr,t)$
+under study on plane wave components,
+\beq{PlaneWave}
+\ffn_{\kkk,\omega}\: e^{i(\kkk\cdot\rrr - \omega t)},
+\eeq
+travelling at the speed $v = \omega/|\kkk|$.
+
+\section{Continuous functions in a finite region}
+\seclab{FiniteRegion}
+
+Consider a rectangular box in 3D with side lengths $L_x$, $L_y$, $L_z$
+and a volume $\vol = L_x L_y L_z$. The central theorem in Fourier
+analysis states that any well-behaved function fulfilling the periodic
+boundary conditions,
+\beq{PeriodicBC}
+f(\rrr+L_x\eee_x) = f(\rrr+L_y\eee_y) = f(\rrr+L_z\eee_z) = f(\rrr)
+\end{equation}
+can be written as a Fourier series
+\beq{fk_sum}
+f(\rrr) = \frac{1}{\vol}\sum_{\kkk} \ffn_{\kkk}\: e^{i\kkk\cdot\rrr},\;
+\left\{ \begin{array}{l}
+k_x = \frac{2\pi n_x}{L_x},\; n_x = 0, \pm 1, \pm 2, \ldots\\
+{\rm likewise\; for}\;\: y\;\: {\rm and}\;\: z,
+\end{array} \right.
+\end{equation}
+where
+\beq{fr_sum}
+\ffn_{\kkk} = \int_\vol\! d\rrr\: f(\rrr)\: e^{-i\kkk\cdot\rrr}.
+\end{equation}
+Note the prefactor $1/\vol$ in \eqref{fk_sum}. It is our choice to
+put it there. Another choice would be to put it in \eqref{fr_sum},
+or to put $1/\sqrt{\vol}$ in front of both equations. In all cases
+the product of the normalization constants should be $1/\vol$.
+
+An extremely important and very useful theorem states
+\beq{delta_fct}
+\int\!d\rrr\: e^{-i\kkk\cdot\rrr} = \vol\: \krondel{\kkk}{0},
+\qquad \qquad
+\frac{1}{\vol} \sum_{\kkk} e^{i\kkk\cdot\rrr} = \delta(\rrr).
+\end{equation}
+Note the dimensions in these two expressions so that you do not
+forget where to put the factors of $\vol$ and $1/\vol$. Note also
+that by using \eqref{delta_fct} you can prove that Fourier
+transforming from $\rrr$ to $\kkk$ and then back brings you back
+to the starting point: insert $\ffn_{\kkk}$ from \eqref{fr_sum} into
+the expression for $f(\rrr)$ in \eqref{fk_sum} an reduce by use of
+\eqref{delta_fct}.
+
+
+\section{Continuous functions in an infinite region}
+\seclab{InfiniteRegion}
+
+If we let $\vol$ tend to infinity the $\kkk$-vectors become
+quasi-continuous variables, and the $\kkk$-sum in \eqref{fk_sum} is
+converted into an integral,
+\beq{fk_sum_to_int}
+f(\rrr) = \frac{1}{\vol}\sum_{\kkk} \ffn_{\kkk}\: e^{i\kkk\cdot\rrr}
+\quad \mathop{\longrightarrow}_{\vol\rightarrow\infty} \quad
+\frac{1}{\vol} \frac{\vol}{\twopicubed}
+\int\!d\kkk\: \ffn_{\kkk}\: e^{i\kkk\cdot\rrr} =
+\int\!\dktwopicubed\: \ffn_{\kkk}\: e^{i\kkk\cdot\rrr}.
+\end{equation}
+Now you see why we choose to put $1/\vol$ in front of $\sum_{\kkk}$.
+We have
+\beq{FourInf_rk} f(\rrr) = \int\!\dktwopicubed\:
+\ffn_{\kkk}\: e^{i\kkk\cdot\rrr}, \qquad \qquad \ffn_{\kkk} =
+\int\!d\rrr\: f(\rrr) e^{-i\kkk\cdot\rrr},
+\end{equation}
+and also
+\beq{delta_rk}
+\int\!\dktwopicubed\: e^{i\kkk\cdot\rrr} = \delta(\rrr),
+\qquad \qquad
+\int\!d\rrr\: e^{-i\kkk\cdot\rrr} = \twopicubed\: \delta(\kkk).
+\end{equation}
+Note that the dimensions are okay. Again it is easy to use these
+expression to verify that Fourier transforming twice brings you back
+to the starting point.
+
+\section{Time and frequency Fourier transforms}
+\seclab{time_freq_FT}
+
+The time $t$ and frequency $\omega$ transforms can be thought of as an
+extension of functions periodic with the finite period $\cal T$, to
+the case where this period tends to infinity. Thus $t$ plays the role
+of $\rrr$ and $\omega$ that of $\kkk$, and in complete analogy with
+\eqref{FourInf_rk} -- but with the opposite sign of $i$ due to
+\eqref{PlaneWave} -- we have
+\beq{FourInf_tw}
+f(t) =
+\int_{-\infty}^{\infty}\!\domegatwopi\: \ffn_\omega\: e^{-i\omega t},
+\qquad \qquad
+\ffn_\omega = \int_{-\infty}^{\infty}\!dt\: f(t) e^{i\omega t},
+\end{equation}
+and also
+\beq{delta_tw}
+\int_{-\infty}^{\infty}\!\domegatwopi\: e^{-i\omega t} = \delta(t),
+\qquad \qquad
+\int_{-\infty}^{\infty}\!dt\: e^{i\omega t} = 2\pi\: \delta(\omega).
+\end{equation}
+Note again that the dimensions are okay.

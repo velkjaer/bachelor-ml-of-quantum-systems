@@ -1,0 +1,77 @@
+\documentclass[a4paper,11pt]{book}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%         Include only                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% During writing, include only the chapter you want to compile
+%\includeonly{chap01}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            Packages                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts,amsmath,amssymb} % Math symbols form American Mathematical Society
+\usepackage{textcomp}
+\usepackage{bm}
+\usepackage[dvips]{graphicx}
+\usepackage[latin1]{inputenc}
+\input{texdef}          %include your own LaTeX-macros from texdef.tex
+\makeindex              %out-comment this, if you do not want an index
+
+
+\usepackage[numbers, sort&compress]{natbib}
+%    round: (default) for round parentheses;
+%    square: for square brackets;
+%    curly: for curly braces;
+%    angle: for angle brackets;
+%    colon: (default) to separate multiple citations with colons;
+%    comma: to use commas as separaters;
+%    authoryear: (default) for author-year citations;
+%    numbers: for numerical citations;
+%    super: for superscripted numerical citations, as in Nature;
+%    sort: orders multiple citations into the sequence in which they appear in the list of references;
+%    sort&compress: as sort but in addition multiple numerical citations are compressed if possible (as 3-6, 15);
+%    longnamesfirst: makes the first citation of any reference the equivalent of the starred variant (full author list) and subsequent citations normal (abbreviated list);
+%    sectionbib: redefines \thebibliography to issue \section* instead of \chapter*; valid only for classes with a \chapter command; to be used with the chapterbib package;
+%    nonamebreak: keeps all the authors' names in a citation on one line; causes overfull hboxes but helps with some hyperref problems.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            Page style                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\topmargin       10 mm
+\oddsidemargin    8 mm
+\evensidemargin   0 mm
+\textwidth      150 mm
+\textheight     210 mm
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            main body                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% First include the front, i.e. title, abstracts, lists-of-what-not, etc
+\include{chap00}
+
+% Then include all the regular chapters
+\include{chap01}
+\include{chap02}
+
+% After that the appendices
+\appendix
+\include{chapA}
+
+
+% Perhaps add an index
+% If 'MyThesis.ind' does not exist, create an empty text file named 'MyThesis.ind'
+\include{chapY_index}
+
+
+% Finally the bibliography
+\include{chapZ_bib}
+
+
+\end{document}

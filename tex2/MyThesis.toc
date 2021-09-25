@@ -1,0 +1,40 @@
+\contentsline {chapter}{List of figures}{xi}
+\contentsline {chapter}{List of tables}{xiii}
+\contentsline {chapter}{List of symbols}{xv}
+\contentsline {chapter}{\numberline {1}Basic concepts in microfluidics}{1}
+\contentsline {section}{\numberline {1.1}Fluids and fields}{2}
+\contentsline {subsection}{\numberline {1.1.1}Fluids: liquids and gases}{2}
+\contentsline {subsection}{\numberline {1.1.2}The continuum hypothesis and fluid particles}{3}
+\contentsline {subsection}{\numberline {1.1.3}The velocity, pressure and density field}{5}
+\contentsline {section}{\numberline {1.2}SI units and mathematical notation}{5}
+\contentsline {subsection}{\numberline {1.2.1}SI units}{5}
+\contentsline {subsection}{\numberline {1.2.2}Vectors, derivatives and the index notation}{7}
+\contentsline {section}{\numberline {1.3}The continuity equation}{8}
+\contentsline {subsection}{\numberline {1.3.1}Compressible fluids}{9}
+\contentsline {subsection}{\numberline {1.3.2}Incompressible fluids}{10}
+\contentsline {section}{\numberline {1.4}The Navier--Stokes equation}{10}
+\contentsline {subsection}{\numberline {1.4.1}The material time-derivative}{11}
+\contentsline {subsection}{\numberline {1.4.2}Body forces}{11}
+\contentsline {subsection}{\numberline {1.4.3}The pressure-gradient force}{11}
+\contentsline {subsection}{\numberline {1.4.4}The viscous force and the viscous stress tensor}{12}
+\contentsline {subsection}{\numberline {1.4.5}The Navier--Stokes equation for compressible fluids}{12}
+\contentsline {subsection}{\numberline {1.4.6}The Navier--Stokes equation for incompressible fluids}{13}
+\contentsline {subsection}{\numberline {1.4.7}Physical parameters of water}{13}
+\contentsline {chapter}{\numberline {2}Analytical Navier--Stokes solutions}{15}
+\contentsline {section}{\numberline {2.1}Fluids in mechanical equilibrium}{15}
+\contentsline {section}{\numberline {2.2}Liquid film flow on an inclined plane}{16}
+\contentsline {section}{\numberline {2.3}Couette flow}{18}
+\contentsline {section}{\numberline {2.4}Poiseuille flow}{19}
+\contentsline {subsection}{\numberline {2.4.1}Arbitrary cross-sectional shape}{19}
+\contentsline {subsection}{\numberline {2.4.2}Elliptic cross-section}{21}
+\contentsline {subsection}{\numberline {2.4.3}Circular cross-section}{22}
+\contentsline {subsection}{\numberline {2.4.4}Equilateral triangular cross-section}{23}
+\contentsline {subsection}{\numberline {2.4.5}Rectangular cross-section}{24}
+\contentsline {subsection}{\numberline {2.4.6}Infinite parallel-plate channel}{27}
+\contentsline {section}{\numberline {2.5}Shape perturbation in Poiseuille flow problems}{28}
+\contentsline {chapter}{\numberline {A}Fourier transformations I}{31}
+\contentsline {section}{\numberline {A.1}Continuous functions in a finite region}{31}
+\contentsline {section}{\numberline {A.2}Continuous functions in an infinite region}{32}
+\contentsline {section}{\numberline {A.3}Time and frequency Fourier transforms}{32}
+\contentsline {chapter}{\hbox to\@tempdima {\hfil }Index}{33}
+\contentsline {chapter}{\hbox to\@tempdima {\hfil }Bibliography}{35}
